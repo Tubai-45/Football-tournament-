@@ -1,100 +1,157 @@
-/* Reset and Base Setup */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #1e90ff;
+  --secondary-color: #ff4081;
+  --accent-color: #32cd32;
+  --dark-bg: #121212;
+  --light-bg: #f0f0f0;
+  --card-bg: #1f1f1f;
+  --text-color: #ffffff;
+  --highlight: #ffcc00;
+  --gradient: linear-gradient(135deg, #1e90ff, #32cd32);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: url('background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  color: white;
-  position: relative;
-  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Overlay for better text readability */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.55);
-  z-index: 0;
-}
-
-header, nav, section, footer {
-  position: relative;
-  z-index: 1;
-}
-
-/* Logo */
-.logo {
+/* Header */
+header {
+  background: var(--gradient);
+  padding: 20px;
   text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #00ffcc;
-  padding: 20px 0;
-  text-shadow: 2px 2px 6px black;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
 }
 
 /* Navigation */
 nav {
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  gap: 25px;
+  gap: 20px;
+  padding: 15px 0;
+  background: #1a1a1a;
 }
 
 nav a {
-  color: #fff;
-  font-weight: 600;
+  color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  background: #292929;
 }
 
 nav a:hover {
-  color: #00ffcc;
+  background: var(--accent-color);
+  color: #000;
 }
 
-/* Section Styling */
-section {
-  max-width: 1000px;
+/* Hero Section */
+.hero {
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* Match Fixtures */
+.fixtures {
+  background: var(--light-bg);
+  color: #000;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.fixtures h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.fixture-card {
+  background: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.fixture-card:hover {
+  transform: scale(1.03);
+}
+
+/* Scoreboard */
+.scoreboard {
+  background: var(--card-bg);
+  color: var(--highlight);
+  padding: 30px;
   margin: 30px auto;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  border: 2px solid var(--highlight);
+}
+
+.scoreboard h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
+  background: #0d0d0d;
   padding: 20px;
+  text-align: center;
   color: #ccc;
   font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .logo {
+  .hero h2 {
     font-size: 2rem;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  section {
-    margin: 20px 10px;
-    padding: 20px;
+  .fixture-card, .scoreboard {
+    width: 90%;
   }
 }
