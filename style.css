@@ -1,28 +1,69 @@
-body {
-  font-family: sans-serif;
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Header */
 header {
-  background: green;
-  color: white;
-  padding: 20px;
+  background: #0b6623;
+  color: #fff;
+  padding: 2rem 1rem;
   text-align: center;
+  border-bottom: 4px solid #055f20;
 }
 
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Section Styling */
 section {
-  padding: 20px;
-  background: white;
-  margin: 10px;
-  border-radius: 8px;
+  background: #fff;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+section h2 {
+  margin-bottom: 1rem;
+  color: #0b6623;
+  border-left: 5px solid #0b6623;
+  padding-left: 10px;
+}
+
+/* Team List & Match Info */
+ol, ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 th, td {
@@ -31,9 +72,41 @@ th, td {
   text-align: center;
 }
 
+th {
+  background: #0b6623;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background: #f1f1f1;
+}
+
+/* Footer */
 footer {
   text-align: center;
   background: #222;
-  color: white;
-  padding: 10px;
+  color: #fff;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 3px solid #0b6623;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }
